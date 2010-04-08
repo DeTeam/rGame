@@ -2,3 +2,5 @@ TODO:
 
 Animation module/class
 Build class tree on a paper, or uml
+Map object(add x, y, width, height, scrolling)
+Collisions ?

@@ -39,10 +39,15 @@ module Game
       
     end
 
-    #
-    # Move proccess itself, change coordinates of object, some acceleration down
-    #
+
     def move
+      [@x + @vel_x, @y + @vel_y]
+    end
+
+    #
+    # Move proccess itself, do change coordinates of object, some acceleration down
+    #
+    def move!
       @x += @vel_x
       @y += @vel_y
       @angle += @vel_a
@@ -50,6 +55,13 @@ module Game
       @vel_x *= ACCELERATION_DOWN_X
       @vel_y *= ACCELERATION_DOWN_Y
       @vel_a *= ACCELERATION_DOWN_A
+    end
+
+    #
+    # Makes same thing as move!
+    #
+    def update
+      move!
     end
 
   end

@@ -38,7 +38,7 @@ describe Movable do
   it "should be able to move" do
       -5.upto 5 do |i|
         @movable.accelerate i
-        @movable.move
+        @movable.move!
       end
       @movable.x.should_not == 0.0
       @movable.y.should_not == 0.0
