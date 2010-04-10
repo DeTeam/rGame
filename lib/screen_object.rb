@@ -13,7 +13,7 @@ module Game
     #
     # Super method and image initialization
     #
-    def initialize window, path, tileable
+    def initialize window, path, tileable = false
       super
       @image = Gosu::Image.new(window, path, tileable)
     end

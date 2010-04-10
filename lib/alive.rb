@@ -15,15 +15,16 @@ module Game
     # Screen object inializating with hp
     #
     def initialize hp, *params
-      @hp = hp
-      super(params)      
+      super params
+      @hp = hp.abs
+      @hp = @hp > MAX_HITPOINT ? MAX_HITPOINT : @hp      
     end
 
     #
     # Making some heal
     #
     def heal hp
-      @hp += hp
+      @hp += hp.abs
       @hp = @hp > MAX_HITPOINT  ? MAX_HITPOINT : @hp
     end
 
@@ -31,7 +32,7 @@ module Game
     # Damaging our person
     #
     def damage hp
-      @hp -= hp
+      @hp -= hp.abs
       @hp = @hp < 0 ? 0 : @hp
     end
 
